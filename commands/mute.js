@@ -19,11 +19,11 @@ module.exports = {
     const user = message.mentions.members.first();
     
     if(!user) {
-      return message.channel.send("Você não mencionou ninguém para eu mutar!").then(m => m.delete(15000))
+      return message.channel.send("Você não mencionou ninguém para eu mutar!").then(m => m.delete(15000));
     }
     
     if(user.id === message.author.id) {
-      return message.channel.send("I won't mute you -_-");
+      return message.channel.send("Não foi possível punir o usuário mencionado!").then(m => m.delete(15000)); 
     }
     
     
@@ -31,7 +31,7 @@ module.exports = {
     
     
     if(!reason) {
-      return message.channel.send("Não foi fornecido o motivo para punir o usuário mencionado!")
+      return message.channel.send("Não foi fornecido o motivo para punir o usuário mencionado!").then(m => m.delete(15000));
     }
     
   //TIME TO LET MUTED ROLE
@@ -40,7 +40,7 @@ module.exports = {
     
     
       if(!muterole) {
-      return message.channel.send("Crie um cargo com o nome `Silenciado` para eu conseguir mutar os usuários!")
+      return message.channel.send("Crie um cargo com o nome `Silenciado` para eu conseguir mutar os usuários!").then(m => m.delete(15000));
     }
     
     
@@ -53,7 +53,7 @@ module.exports = {
     
     user.roles.add(muterole)
     
-await message.channel.send(`Usuário **${message.mentions.users.first().username}** foi Mutado por \`${reason}\``)
+await message.channel.send(`Usuário **${message.mentions.users.first().username}** foi Mutado por \`${reason}\``).then(m => m.delete(1.then(m => m.delete(25000));
     
     user.send(`Você foi Mutado no servidor **${message.guild.name}** por \`${reason}\``)
     
