@@ -39,9 +39,23 @@ module.exports = {
     let muterole = message.guild.roles.cache.find(x => x.name === "Silenciado")
     
     
-      if(!muterole) {
-      return message.channel.send("Crie um cargo com o nome `Silenciado` para eu conseguir mutar os usuários!").then(m => m.delete(15000));
+      if(!muterole)
+    try{
+      muterole = await message.guild.createRole({
+        name: "Silenciado",
+        color: "#FF0000",
+        permissions:[]
+      })
+      message.guild.channels.forEach(async (channel, id) => {
+        await channel.overwritePermissions(muterole, {
+          SEND_MESSAGES: false,
+          ADD_REACTIONS: false
+        });
+      });
+    }catch(e){
+      console.log(e.stack);
     }
+  }
     
     
    if(user.roles.cache.has(muterole)) {
