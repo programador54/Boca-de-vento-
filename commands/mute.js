@@ -55,7 +55,7 @@ module.exports = {
     }catch(e){
       console.log(e.stack);
     }
-  }
+  
     
     
    if(user.roles.cache.has(muterole)) {
@@ -67,7 +67,7 @@ module.exports = {
     
     user.roles.add(muterole)
     
-await message.channel.send(`Usuário **${message.mentions.users.first().username}** foi Mutado por \`${reason}\``).then(m => m.delete(1.then(m => m.delete(25000));
+await message.channel.send(`Usuário **${message.mentions.users.first().username}** foi Mutado por \`${reason}\``).then(m => m.delete(25000));
     
     user.send(`Você foi Mutado no servidor **${message.guild.name}** por \`${reason}\``)
     
