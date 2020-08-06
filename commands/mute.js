@@ -19,7 +19,7 @@ module.exports = {
     const user = message.mentions.members.first();
     
     if(!user) {
-      return message.channel.send("Please mention the member to who you want to mute")
+      return message.channel.send("Você não mencionou ninguém para eu mutar!").then(m => m.delete(15000))
     }
     
     if(user.id === message.author.id) {
@@ -31,21 +31,21 @@ module.exports = {
     
     
     if(!reason) {
-      return message.channel.send("Please Give the reason to mute the member")
+      return message.channel.send("Não foi fornecido o motivo para punir o usuário mencionado!")
     }
     
   //TIME TO LET MUTED ROLE
     
-    let muterole = message.guild.roles.cache.find(x => x.name === "Muted")
+    let muterole = message.guild.roles.cache.find(x => x.name === "Silenciado")
     
     
       if(!muterole) {
-      return message.channel.send("This server do not have role with name `Muted`")
+      return message.channel.send("Crie um cargo com o nome `Silenciado` para eu conseguir mutar os usuários!")
     }
     
     
    if(user.roles.cache.has(muterole)) {
-      return message.channel.send("Given User is already muted")
+      return message.channel.send("Usuário mencionado já está Mutado!")
     }
     
   
@@ -53,9 +53,9 @@ module.exports = {
     
     user.roles.add(muterole)
     
-await message.channel.send(`Usuário **${message.mentions.users.first().username}** Mutado por \`${reason}\``)
+await message.channel.send(`Usuário **${message.mentions.users.first().username}** foi Mutado por \`${reason}\``)
     
-    user.send(`You are muted in **${message.guild.name}** For \`${reason}\``)
+    user.send(`Você foi Mutado no servidor **${message.guild.name}** por \`${reason}\``)
     
     
 //WE ARE DONE HERE 
