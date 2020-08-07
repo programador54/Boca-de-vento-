@@ -1,4 +1,3 @@
-logojs Código:
 const Discord = require("discord.js");
 
 module.exports.run = async (client, message, args) => {
@@ -7,7 +6,7 @@ module.exports.run = async (client, message, args) => {
     return message.channel.send(
       `**${message.author.username}, a sintaxe correta é:** ` +
         "`" +
-        "!emoji nomedoemoji`"
+        "d-emoji nomedoemoji`"
     ); //Troque a exclamação ! da mensagem acima pelo seu prefixo
   let emoji = message.guild.emojis.cache.find(emoji => emoji.name === args[0]);
 
