@@ -67,7 +67,7 @@ module.exports = {
                 },
                 {
                     name: 'User Roles: ',
-                    value: user.roles.cache.map(role => role.toString()).join(" ,"),
+                    value: user.roles.cache.map(role => `${role.name}`).join(" ,"),
                     inline: true
                 }
             )
