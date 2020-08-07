@@ -28,21 +28,21 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setThumbnail(message.guild.iconURL({dynamic : true}))
-            .setColor('#f3f3f3')
+            .setColor('#FF00FF')
             .setTitle(`${message.guild.name} server stats`)
             .addFields(
                 {
-                    name: "Owner: ",
+                    name: "Dono: ",
                     value: message.guild.owner.user.tag,
                     inline: true
                 },
                 {
-                    name: "Members: ",
+                    name: "Membros: ",
                     value: `There are ${message.guild.memberCount} users!`,
                     inline: true
                 },
                 {
-                    name: "Members Online: ",
+                    name: "Membros On-line: ",
                     value: `There are ${message.guild.members.cache.filter(m => m.user.presence.status == "online").size} users online!`,
                     inline: true
                 },
@@ -52,22 +52,22 @@ module.exports = {
                     inline: true
                 },
                 {
-                    name: "Creation Date: ",
+                    name: "Data de criação: ",
                     value: message.guild.createdAt.toLocaleDateString("en-us"),
                     inline: true
                 },
                 {
-                    name: "Roles Count: ",
+                    name: "Total de Cargos: ",
                     value: `There are ${message.guild.roles.cache.size} roles in this server.`,
                     inline: true,
                 },
                 {
-                    name: `🗺 Region: `,
+                    name: `🗺 Região: `,
                     value: region,
                     inline: true
                 },
                 {
-                    name: `Verified: `,
+                    name: `Verificação: `,
                     value: message.guild.verified ? 'Server is verified' : `Server isn't verified`,
                     inline: true
                 },
