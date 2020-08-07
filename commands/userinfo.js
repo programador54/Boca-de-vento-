@@ -9,26 +9,26 @@ module.exports = {
         let status;
         switch (user.presence.status) {
             case "online":
-                status = "<:Online:642306780788949022>";
+                status = "<:Online:642306780788949022> Online";
                 break;
             case "dnd":
-                status = "<:DND:642306779354497034>";
+                status = "<:DND:642306779354497034> Não perturbar";
                 break;
             case "idle":
-                status = "<:Idle:642306780231237642>";
+                status = "<:Idle:642306780231237642> Ausente";
                 break;
             case "offline":
-                status = "<:Offline:642306779539046410>";
+                status = "<:Offline:642306779539046410> Off-line/invisível";
                 break;
         }
 
         const embed = new MessageEmbed()
-            .setTitle(`${user.user.username} stats`)
+            .setTitle(`Informações sobre o ${user.user.username}`)
             .setColor(`#f3f3f3`)
             .setThumbnail(user.user.displayAvatarURL({dynamic : true}))
             .addFields(
                 {
-                    name: "Name: ",
+                    name: "Nome do usuário: ",
                     value: user.user.username,
                     inline: true
                 },
@@ -38,16 +38,16 @@ module.exports = {
                     inline: true
                 },
                 {
-                    name: "🆔 ID: ",
+                    name: "🆔 ID do Discord: ",
                     value: user.user.id,
                 },
                 {
-                    name: "Current Status: ",
+                    name: "Status atual: ",
                     value: status,
                     inline: true
                 },
                 {
-                    name: "Activity: ",
+                    name: "Atividade: ",
                     value: user.presence.activities[0] ? user.presence.activities[0].name : `User isn't playing a game!`,
                     inline: true
                 },
@@ -56,12 +56,12 @@ module.exports = {
                     value: `[Click Here](${user.user.displayAvatarURL()})`
                 },
                 {
-                    name: 'Creation Date: ',
+                    name: 'Data de criação: ',
                     value: user.user.createdAt.toLocaleDateString("en-us"),
                     inline: true
                 },
                 {
-                    name: 'Joined Date: ',
+                    name: 'Entrou no servidor em: ',
                     value: user.joinedAt.toLocaleDateString("en-us"),
                     inline: true
                 },
