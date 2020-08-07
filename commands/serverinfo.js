@@ -38,17 +38,17 @@ module.exports = {
                 },
                 {
                     name: "Membros: ",
-                    value: `There are ${message.guild.memberCount} users!`,
+                    value: `Há ${message.guild.memberCount} usuários!`,
                     inline: true
                 },
                 {
                     name: "Membros On-line: ",
-                    value: `There are ${message.guild.members.cache.filter(m => m.user.presence.status == "online").size} users online!`,
+                    value: `Há ${message.guild.members.cache.filter(m => m.user.presence.status == "online").size} usuários online!`,
                     inline: true
                 },
                 {
                     name: "Total Bots: ",
-                    value: `There are ${message.guild.members.cache.filter(m => m.user.bot).size} bots!`,
+                    value: `Há ${message.guild.members.cache.filter(m => m.user.bot).size} bots!`,
                     inline: true
                 },
                 {
@@ -58,7 +58,7 @@ module.exports = {
                 },
                 {
                     name: "Total de Cargos: ",
-                    value: `There are ${message.guild.roles.cache.size} roles in this server.`,
+                    value: `Há ${message.guild.roles.cache.size} cargos neste servidor.`,
                     inline: true,
                 },
                 {
@@ -68,17 +68,17 @@ module.exports = {
                 },
                 {
                     name: `Verificação: `,
-                    value: message.guild.verified ? 'Server is verified' : `Server isn't verified`,
+                    value: message.guild.verified ? 'Servidor é verificado' : `Servidor não é verificado`,
                     inline: true
                 },
                 {
                     name: 'Boosters: ',
-                    value: message.guild.premiumSubscriptionCount >= 1 ? `There are ${message.guild.premiumSubscriptionCount} Boosters` : `There are no boosters`,
+                    value: message.guild.premiumSubscriptionCount >= 1 ? `Há ${message.guild.premiumSubscriptionCount} Boosters!` : `Não há Boosters neste servidor!`,
                     inline: true
                 },
                 {
                     name: "Emojis: ",
-                    value: message.guild.emojis.cache.size >= 1 ? `There are ${message.guild.emojis.cache.size} emojis!` : 'There are no emojis' ,
+                    value: message.guild.emojis.cache.size >= 1 ? `Há ${message.guild.emojis.cache.size} emojis!` : 'Não há emojis' ,
                     inline: true
                 }
             )
