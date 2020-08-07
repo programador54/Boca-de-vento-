@@ -23,13 +23,13 @@ module.exports = {
         }
 
         const embed = new MessageEmbed()
-            .setTitle(`Informações sobre o ${user.user.username}`)
-            .setColor(`#f3f3f3`)
+            .setTitle(`Informações sobre o ${user.user.tag}`)
+            .setColor(`#FF00FF`)
             .setThumbnail(user.user.displayAvatarURL({dynamic : true}))
             .addFields(
                 {
                     name: "Nome do usuário: ",
-                    value: user.user.username,
+                    value: `\`${user.user.username} \``,
                     inline: true
                 },
                 {
@@ -66,7 +66,7 @@ module.exports = {
                     inline: true
                 },
                 {
-                    name: 'User Roles: ',
+                    name: 'Cargos: ',
                     value: user.roles.cache.map(role => `\`${role.name}\``).join(" ,"),
                     inline: true
                 }
