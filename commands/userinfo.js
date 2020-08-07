@@ -28,7 +28,7 @@ module.exports = {
             .setThumbnail(user.user.displayAvatarURL({dynamic : true}))
             .addFields(
                 {
-                    name: "Nome do usuário: ",
+                    name: "🔖 Nome do usuário: ",
                     value: `\`${user.user.username} \``,
                     inline: true
                 },
@@ -42,31 +42,31 @@ module.exports = {
                     value: `\`${user.user.id}\``,
                 },
                 {
-                    name: "Status atual: ",
+                    name: "📶 Status atual: ",
                     value: status,
                     inline: true
                 },
                 {
-                    name: "Atividade: ",
+                    name: "🕹️ Atividade: ",
                     value: user.presence.activities[0] ? user.presence.activities[0].name : `User isn't playing a game!`,
                     inline: true
                 },
                 {
-                    name: 'Avatar link: ',
+                    name: '🖼️ Avatar link: ',
                     value: `[Click Here](${user.user.displayAvatarURL()})`
                 },
                 {
-                    name: 'Data de criação: ',
+                    name: '📆 Data de criação: ',
                     value: user.user.createdAt.toLocaleDateString("en-us"),
                     inline: true
                 },
                 {
-                    name: 'Entrou no servidor em: ',
+                    name: '📆 Entrou no servidor em: ',
                     value: user.joinedAt.toLocaleDateString("en-us"),
                     inline: true
                 },
                 {
-                    name: 'Cargos: ',
+                    name: '💼 Cargos: ',
                     value: user.roles.cache.map(role => `\`${role.name}\``).join(" ,"),
                     inline: true
                 }
