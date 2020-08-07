@@ -9,16 +9,16 @@ module.exports = {
         let status;
         switch (user.presence.status) {
             case "online":
-                status = "<:online:729181184193462285> online";
+                status = "<:Online:642306780788949022>";
                 break;
             case "dnd":
-                status = "<:dnd:729181212530442311> dnd";
+                status = "<:DND:642306779354497034>";
                 break;
             case "idle":
-                status = "<:idle:729181121933475931> idle";
+                status = "<:Idle:642306780231237642>";
                 break;
             case "offline":
-                status = "<:offline:729181162182017051> offline";
+                status = "<:Offline:642306779539046410>";
                 break;
         }
 
