@@ -22,6 +22,23 @@ client.on('message', message => {
   }
 });
 
+client.on('message', (message) => { //whenever a message is sent
+
+  if (message.content.includes('Dianna')) { //if it contains an invite link
+
+    message.react("737870780095791195") //delete the message
+  }
+});
+
+client.on('message', (message) => { //whenever a message is sent
+
+  if (message.content.includes('dianna')) { //if it contains an invite link
+
+    message.react("737870780095791195") //delete the message
+  }
+});
+
+
 client.on("ready", () => {
   let activities = [
       `Em desenvolvimento!`,
