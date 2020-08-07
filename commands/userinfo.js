@@ -34,12 +34,12 @@ module.exports = {
                 },
                 {
                     name: "#️⃣ Discriminator: ",
-                    value: `#${user.user.discriminator}`,
+                    value: `\`#${user.user.discriminator}\``,
                     inline: true
                 },
                 {
                     name: "🆔 ID do Discord: ",
-                    value: user.user.id,
+                    value: `\`${user.user.id}\``,
                 },
                 {
                     name: "Status atual: ",
@@ -67,7 +67,7 @@ module.exports = {
                 },
                 {
                     name: 'User Roles: ',
-                    value: user.roles.cache.map(role => `${role.name}`).join(" ,"),
+                    value: user.roles.cache.map(role => `\`${role.name}\``).join(" ,"),
                     inline: true
                 }
             )
