@@ -1,23 +1,23 @@
-module.exports = {
-    name: "clear",
-    description: "Clears messages",
+const Discord = require("discord.js");
 
-    async run (client, message, args) {
+exports.run = async (client, message, args) => {
+  if (!message.member.permissions.has("MANAGE_MESSAGES"))
+    return message.reply(
+      "você é fraco, lhe falta permissão de `Gerenciar Mensagens` para usar esse comando"
+    );
+  const deleteCount = parseInt(args[0], 10);
+  if (!deleteCount || deleteCount < 1 || deleteCount > 99)
+    return message.reply(
+      "forneça um número de até **99 mensagens** a serem excluídas"
+    );
 
-        const amount = args.join(" ");
-
-        if(!amount) return message.reply('please provide an amount of messages for me to delete')
-
-        if(amount > 100) return message.reply(`você não pode limpar mais de 100 mensagens de uma só vez!`)
-
-        if(amount < 1) return message.reply(`you need to delete at least one message`)
-
-        await message.channel.messages.fetch({limit: amount}).then(messages => {
-            message.channel.bulkDelete(messages
-    )});
-
-
-    message.channel.send('Success!')
-
-    }
-}
+  const fetched = await message.channel.messages.fetch({
+    limit: deleteCount + 1
+  });
+  message.channel.bulkDelete(fetched);
+  message.channel
+    .send(`**${args[0]} mensagens limpas nesse chat!**`).then(msg => msg.delete({timeout: 5000}))
+    .catch(error =>
+      console.log(`Não foi possível deletar mensagens devido a: ${error}`)
+    );
+};  
