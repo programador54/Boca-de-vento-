@@ -6,7 +6,7 @@ module.exports = {
 
     async run (client, message, args) {
 
-        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('Você não pode usar isso.!')
+        if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('<a:alertA:727101012174962838> | <@${message.author.id}>. Você precisa ter a permissão de **BANIR_MEMBROS** para poder utilizar este comando.')
         if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send('Eu não tenho a permissão certa.')
 
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
