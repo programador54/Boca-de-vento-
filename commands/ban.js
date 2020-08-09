@@ -8,7 +8,7 @@ module.exports = {
 
         if(!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send(`<a:alertA:727101012174962838> | <@${message.author.id}>, Você precisa ter a permissão de **BANIR_MEMBROS** para poder utilizar este comando.`).then(msg => msg.delete({timeout: 5000}))
         if(!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send(`<a:errado:630163775122833419> | <@${message.author.id}>, Eu não tenho a permissão certa.`).then(msg => msg.delete({timeout: 5000}))
-
+        message.delete().catch(O_o => {});
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
 
         if(!args[0]) return message.channel.send(`<a:errado:630163775122833419> | <@${message.author.id}>, Por favor, especifique um usuário\n\> **ex**: d-ban @user flood no chat`).then(msg => msg.delete({timeout: 5000}));
