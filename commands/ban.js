@@ -11,9 +11,9 @@ module.exports = {
 
         const member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
 
-        if(!args[0]) return message.channel.send(`<a:errado:630163775122833419> | <@${message.author.id}>, Por favor, especifique um usuário\n\> **ex**: d-ban @user flood no chat').then(msg => msg.delete({timeout: 5000}));
+        if(!args[0]) return message.channel.send(`<a:errado:630163775122833419> | <@${message.author.id}>, Por favor, especifique um usuário\n\> **ex**: d-ban @user flood no chat`).then(msg => msg.delete({timeout: 5000}));
 
-        if(!member) return message.channel.send('Não consigo encontrar esse usuário. Desculpe :/');
+        if(!member) return message.channel.send(`<a:errado:630163775122833419> | <@${message.author.id}>, Não consigo encontrar esse usuário. Desculpe :/`).then(msg => msg.delete({timeout: 5000}));
         if(!member.bannable) return message.channel.send(`<a:errado:630163775122833419> | <@${message.author.id}>, Este usuário não pode ser banido. É porque eles são um moderador/administrador, ou seu papel mais alto é maior do que o meu`).then(msg => msg.delete({timeout: 5000}));
 
         if(member.id === message.author.id) return message.channel.send(`<a:errado:630163775122833419> | <@${message.author.id}>, Ops , você não pode se banir.`).then(msg => msg.delete({timeout: 5000}));
