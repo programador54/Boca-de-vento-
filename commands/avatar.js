@@ -17,8 +17,8 @@ exports.run = async (client, message, args) => {
   // If it's not animated, it will result as a normal image format.
   
   const embed = new Discord.MessageEmbed()
-  .setTitle(`${user.tag} avatar`)
-  .setDescription(`[link avatar do **${user.tag}**](${avatar})`)
+  .setTitle(`🖼️ | Avatar do usuário: ${user.tag}`)
+  .setDescription(`Para baixar a imagem [clique aqui.](${avatar})`)
   .setColor(0x1d1d1d)
   .setImage(avatar)
   
