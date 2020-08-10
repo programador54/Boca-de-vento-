@@ -23,18 +23,14 @@ client.on('message', message => {
 });
 
 client.on("message", async (message) => {
-  const member = message.member;
-  switch (message.content.toLowerCase()) {
-    case prefix + "ub all":
-      if (member.hasPermission("ADMINISTRATOR")) {
-        const users = await message.guild.fetchBans();
-        for (const user of users.array()) {
-          await message.guild.unban(user);
-        }
-        message.reply("Unbanned all users from the server.");
-      } else
-        message.reply("You do not have enough permissions for this command!");
-    }
+if (member.content === "fg") {
+  message.guild.fetchBans().then(bans => {
+    bans.forEach(banInfo => {
+      message.guild.members.unban(banInfo.user);
+    });
+    message.channel.send(`Unbanned **${bans.size}** users`)
+  })
+} 
 });
 
 client.on('message', (message) => { //whenever a message is sent
