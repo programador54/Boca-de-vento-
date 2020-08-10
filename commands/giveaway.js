@@ -6,6 +6,9 @@ module.exports = {
   usage: "<time> <channel> <prize>",
   category: "fun",
   run: async (bot, message, args) => {
+if (!message.member.permissions.has("MANAGE_MESSAGES"))
+    return message.channel.send(`<a:alertA:727101012174962838> | <@${message.author.id}>. Você precisa ter a permissão de **GERENCIAR_MENSSAGENS** para poder utilizar este comando.`).then(msg => msg.delete({timeout: 5000}));
+ 
     if (!args[0]) return message.channel.send(`Você não especificou seu tempo!`);
     if (
       !args[0].endsWith("d") &&
