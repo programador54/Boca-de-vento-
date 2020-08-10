@@ -25,9 +25,9 @@ module.exports = {
     if (!prize) return message.channel.send(`Nenhum prêmio especificado!`);
     message.channel.send(`*Sorteio criado em ${channel}*`);
     let Embed = new MessageEmbed()
-      .setTitle(`New giveaway!`)
+      .setTitle(`Novo sorteio!`)
       .setDescription(
-        `The user ${message.author} is hosting a giveaway for the prize of **${prize}**`
+        `O usuário ${message.author} iniciou um sorteio que tem como prêmio **${prize}**`
       )
       .setTimestamp(Date.now() + ms(args[0]))
       .setColor(`BLUE`);
@@ -37,7 +37,7 @@ module.exports = {
       if (m.reactions.cache.get("🎉").count <= 1) {
         message.channel.send(`Reactions: ${m.reactions.cache.get("🎉").count}`);
         return message.channel.send(
-          `Not enough people reacted for me to start draw a winner!`
+          `Não há pessoas suficientes reagindo para eu começar a escolher um vencedor!`
         );
       }
 
@@ -46,7 +46,7 @@ module.exports = {
         .users.cache.filter((u) => !u.bot)
         .random();
       channel.send(
-        `The winner of the giveaway for **${prize}** is... ${winner}`
+        `O vencedor do sorteio que tem como prêmio **${prize}** é o usuário ... ${winner}`
       );
     }, ms(args[0]));
   },
