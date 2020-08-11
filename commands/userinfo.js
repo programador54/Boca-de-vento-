@@ -59,8 +59,13 @@ module.exports = {
                     name: '💼 Cargos: ',
                     value: user.roles.cache.map(role => `\`${role.name}\``).join(" ,"),
                     inline: true
-                }
-            )
+                }, 
+                   timestamp: new Date(),
+	footer: {
+		text: `Requisitado por ${message.author.tag}`, 
+		icon_url: `${message.author.avatarURL}`,
+	} 
+            
 
         await message.channel.send(embed)
     }
