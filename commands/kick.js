@@ -6,7 +6,7 @@ module.exports = {
 
     async run (client, msg, args) {
 
-if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.channel.send("You don't have permission to kick members.");
+if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.channel.send(`<a:alertA:727101012174962838> | <@${message.author.id}>, Você precisa ter a permissão de **BANIR_MEMBROS** para poder utilizar este comando.`).then(msg => msg.delete({timeout: 15000}));
         let toKick = msg.mentions.members.first();
         let reason = args.slice(1).join(" ");
         if(!args[0]) return msg.channel.send(`<a:errado:630163775122833419> | <@${message.author.id}>, Por favor, especifique um usuário\n\> **ex**: d-kick @user divulgação`).then(msg => msg.delete({timeout: 15000}))
