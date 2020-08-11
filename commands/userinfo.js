@@ -33,7 +33,9 @@ module.exports = {
             .addField('📆 Data de criação: ', user.user.createdAt.toLocaleDateString("en-us"), true) 
             .addField('☀️ Entrou no servidor em:', user.joinedAt.toLocaleDateString("en-us"), true)
             .addField('💼 Cargos: ', user.roles.cache.map(role => `\`${role.name}\``).join(" ,"), true) 
-              
+            .setTimestamp()
+            .setFooter(`Requisitado por ${message.author.tag}` message.author.avatarURL) 
+       
              message.channel.send(embed)
     }
 }
