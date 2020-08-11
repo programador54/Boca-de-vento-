@@ -1,3 +1,11 @@
+const Discord = require('discord.js');
+
+module.exports = {
+    name: "ban",
+    description: "Kicks a member from the server",
+
+    async run (client, message, args) {
+
 if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.channel.send("You don't have permission to kick members.");
         let toKick = msg.mentions.members.first();
         let reason = args.slice(1).join(" ");
@@ -22,3 +30,4 @@ if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.channel.send("You don't
             toKick.kick();
         }
     }
+} 
