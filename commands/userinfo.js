@@ -23,7 +23,7 @@ module.exports = {
         }
 
         const embed = new MessageEmbed()
-            .setTitle(`Informações sobre o ${user.user.tag}`)
+            .setTitle(`<a:dc:742774710751985705> Informações do usuário ${user.user.tag}`)
             .setColor(`#8A2BE2`)
             .setThumbnail(user.user.displayAvatarURL({dynamic : true}))
             .addFields(
