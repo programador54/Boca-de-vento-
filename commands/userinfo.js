@@ -28,34 +28,12 @@ module.exports = {
             .setThumbnail(user.user.displayAvatarURL({dynamic : true}))
             .addField('🔖 Nome do usuário:', `\`${user.user.tag}\``) 
             .addField('🆔 ID do Discord:', `\`${user.user.id}\``) 
-            .addField('📶 Status atual: ', status, inline: true) 
-                       
-             
-                    name: '🖼️ Avatar link: ',
-                    value: `[Click Here](${user.user.displayAvatarURL()})`
-                },
-                {
-                    name: '📆 Data de criação: ',
-                    value: user.user.createdAt.toLocaleDateString("en-us"),
-                    inline: true
-                },
-                {
-                    name: '☀️ Entrou no servidor em: ',
-                    value: user.joinedAt.toLocaleDateString("en-us"),
-                    inline: true
-                },
-                {
-                    name: '💼 Cargos: ',
-                    value: user.roles.cache.map(role => `\`${role.name}\``).join(" ,"),
-                    inline: true
-                }, 
-                   timestamp: new Date(),
-	footer: {
-		text: `Requisitado por ${message.author.tag}`, 
-		icon_url: `${message.author.avatarURL}`,
-	} 
-            
-
-        await message.channel.send(embed)
+            .addField('📶 Status atual: ', status, true) 
+            .addField('🖼️ Avatar link:', `[Click aqui](${user.user.displayAvatarURL()})`) 
+            .addField('📆 Data de criação: ', user.user.createdAt.toLocaleDateString("en-us"), true) 
+            .addField('☀️ Entrou no servidor em:', user.joinedAt.toLocaleDateString("en-us"), true)
+            .addField('💼 Cargos: ', user.roles.cache.map(role => `\`${role.name}\``).join(" ,"), true) 
+              
+             message.channel.send(embed)
     }
 }
