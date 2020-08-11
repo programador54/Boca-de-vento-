@@ -26,22 +26,11 @@ module.exports = {
             .setTitle(`<a:dc:742774710751985705> Informações do usuário ${user.user.tag}`)
             .setColor(`#8A2BE2`)
             .setThumbnail(user.user.displayAvatarURL({dynamic : true}))
-            .addFields(
-                {
-                    name: "🔖 Nome do usuário: ",
-                    value: `\`${user.user.tag}\``,
-                    inline: true
-                },          
-                {
-                    name: "🆔 ID do Discord: ",
-                    value: `\`${user.user.id}\``,
-                },
-                {
-                    name: "📶 Status atual: ",
-                    value: status,
-                    inline: true
-                },           
-                {
+            .addField('🔖 Nome do usuário:', `\`${user.user.tag}\``) 
+            .addField('🆔 ID do Discord:', `\`${user.user.id}\``) 
+            .addField('📶 Status atual: ', status, inline: true) 
+                       
+             
                     name: '🖼️ Avatar link: ',
                     value: `[Click Here](${user.user.displayAvatarURL()})`
                 },
