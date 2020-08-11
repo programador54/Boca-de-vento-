@@ -24,19 +24,14 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setTitle(`Informações sobre o ${user.user.tag}`)
-            .setColor(`#FF00FF`)
+            .setColor(`#8A2BE2`)
             .setThumbnail(user.user.displayAvatarURL({dynamic : true}))
             .addFields(
                 {
                     name: "🔖 Nome do usuário: ",
-                    value: `\`${user.user.username} \``,
+                    value: `\`${user.user.tag}\``,
                     inline: true
-                },
-                {
-                    name: "#️⃣ Discriminator: ",
-                    value: `\`#${user.user.discriminator}\``,
-                    inline: true
-                },
+                },          
                 {
                     name: "🆔 ID do Discord: ",
                     value: `\`${user.user.id}\``,
@@ -45,12 +40,7 @@ module.exports = {
                     name: "📶 Status atual: ",
                     value: status,
                     inline: true
-                },
-                {
-                    name: "🕹️ Atividade: ",
-                    value: user.presence.activities[0] ? user.presence.activities[0].name : `User isn't playing a game!`,
-                    inline: true
-                },
+                },           
                 {
                     name: '🖼️ Avatar link: ',
                     value: `[Click Here](${user.user.displayAvatarURL()})`
@@ -61,7 +51,7 @@ module.exports = {
                     inline: true
                 },
                 {
-                    name: '📆 Entrou no servidor em: ',
+                    name: '☀️ Entrou no servidor em: ',
                     value: user.joinedAt.toLocaleDateString("en-us"),
                     inline: true
                 },
