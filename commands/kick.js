@@ -4,7 +4,7 @@ module.exports = {
     name: "ban",
     description: "Kicks a member from the server",
 
-    async run (client, message, args) {
+    async run (client, msg, args) {
 
 if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.channel.send("You don't have permission to kick members.");
         let toKick = msg.mentions.members.first();
@@ -24,7 +24,7 @@ if(!msg.member.hasPermission('KICK_MEMBERS')) return msg.channel.send("You don't
             .addField('Kicked by', msg.author)
             .addField('Reason', reason)
             .addField('Date', msg.createdAt)
-            .setColor(r);
+            .setColor("#995BBD");
  
             msg.channel.send(x);
             toKick.kick();
