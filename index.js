@@ -52,10 +52,7 @@ client.on('message', (message) => { //whenever a message is sent
 
 client.on("ready", () => {
   let activities = [
-      `Em desenvolvimento!`,
-      `Criador Linux ON!`,
-      `Segurança a todos!`,
-      `Paz mundial!`
+      `Mundo perdido!`
     ],
     i = 0;
   setInterval( () => client.user.setActivity(`${activities[i++ % activities.length]}`, {
